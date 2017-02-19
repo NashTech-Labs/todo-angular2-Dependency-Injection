@@ -1,0 +1,18 @@
+<form class=container xmlns="http://www.w3.org/1999/html">
+  <h1>Create Task</h1>
+  <input type="date" required #date
+         [(ngModel)]="task.date" name="date">
+  <input type="text" placeholder="Title" required #title
+         [(ngModel)]="task.title"  name="title">
+  <input type="text" placeholder="Description" required #description
+         [(ngModel)]="task.description" name="description">
+  <select name="drop" required #dropDown
+          [(ngModel)]="task.priority" class="selectpicker">
+    <option value="" disabled selected>Select your Priority</option>
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select><br>
+  <input class="btn btn-success" type="button"
+         (click)="pushTask()" value="Add Task"/>
+</form>
